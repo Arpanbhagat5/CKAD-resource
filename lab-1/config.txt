@@ -1,0 +1,2 @@
+DB_URL=localhost:1433
+DB_USERNAME=speed
