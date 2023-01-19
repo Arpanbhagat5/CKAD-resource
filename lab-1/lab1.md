@@ -42,7 +42,7 @@ metadata:
 # get base yaml
 kubectl run sqlsrvr --image=nginx --dry-run=client -o yaml > lab1.yaml
 
-# add following to base yaml
+# add following to base yaml >> under container
 envFrom:
     - configMapRef:
         name: db-config

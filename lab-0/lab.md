@@ -50,7 +50,8 @@ pod1   1/1     Running   1 (10m ago)   20m   172.17.0.3   minikube   <none>     
 
 - Run a temporary pod using busybox, shell into it and run a wget against Pod1
 ```
-run busybox --image=busybox --rm -it -- sh
+kubectl run busybox --image=busybox --rm -it -- sh
+
 If you don't see a command prompt, try pressing enter.
 / # wget 172.17.0.3
 Connecting to 172.17.0.3 (172.17.0.3:80)
@@ -64,7 +65,7 @@ pod "busybox" deleted
 ```
 - View the logs of Pod1
 ```
-kubectl logs pod pod1 
+kubectl logs pod pod1
 ...
 172.17.0.4 - - [19/Jan/2023:17:19:40 +0000] "GET / HTTP/1.1" 200 615 "-" "Wget" "-"
 ```

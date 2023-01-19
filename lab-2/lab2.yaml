@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: sqlsrvrsecret
+  name: sqlsrvrsecret
+spec:
+  containers:
+  - image: nginx
+    name: sqlsrvr
+    resources: {}
+    env:
+      - name: DB_PASSWORD
+        valueFrom:
+          secretKeyRef:
+            name: db-credentials
+            key: DB_PASSWORD
+            optional: false # same as default; must exist
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
